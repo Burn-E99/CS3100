@@ -2,3 +2,5 @@
 *.docx#
 ~$*.docx
 .vscode/
+*.out
+makefile

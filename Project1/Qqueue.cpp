@@ -18,6 +18,7 @@ Qqueue::Qqueue(const Qqueue& q) : Capacity(q.size()) {
 
 	for (int i=0;i<num;i++) {
 		try {
+			std::cout<<*(&q.getfront() + i);
 			DynamicQueue[i] = *(&q.getfront() + i);
 		}
 		catch(...) {
@@ -26,6 +27,7 @@ Qqueue::Qqueue(const Qqueue& q) : Capacity(q.size()) {
 	}
 	for (int i=0;i<num;i++) {
 		try {
+			std::cout<<*(&q.getback() + i);
 			DynamicQueue[num - 1 - i] = *(&q.getback() - i);
 		}
 		catch(...) {

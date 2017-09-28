@@ -25,7 +25,7 @@ int main(){
 	std::cout<<test.getback();
 	std::cout<<test.IsEmpty();
 	std::cout<<test.size();
-	
+
 	test.print();
 
 	std::cout<<std::endl;
@@ -33,8 +33,8 @@ int main(){
 	Qqueue test2 = Qqueue(test);
 	test.dequeue();
 	test.enqueue("penis");
-	
 	test2.print();
 
 	std::cout<<test.equals(test2);
+	std::cout<<std::endl<<" ";
 }
