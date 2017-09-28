@@ -102,7 +102,17 @@ int Qqueue::getCapacity() const {
 };
 
 bool Qqueue::equals(const Qqueue& q) const {
+	if (num != q.size()) {
+		return false;
+	}
+	bool endCond = true;
+
+	for (int i=0;i<num;i++) {
+		if(DynamicQueue[(front+i)%Capacity] != *(&q.getfront() + i)) {
+			endCond = false;
+			break;
+		}
+	}
 	
-	
-	return true;
+	return endCond;
 };

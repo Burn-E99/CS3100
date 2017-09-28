@@ -31,6 +31,10 @@ int main(){
 	std::cout<<std::endl;
 
 	Qqueue test2 = Qqueue(test);
-
+	test.dequeue();
+	test.enqueue("penis");
+	
 	test2.print();
+
+	std::cout<<test.equals(test2);
 }
