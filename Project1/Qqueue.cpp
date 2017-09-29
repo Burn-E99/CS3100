@@ -127,3 +127,4 @@ bool Qqueue::equals(const Qqueue& q) const {
 	
 	return endCond;
 };
+
