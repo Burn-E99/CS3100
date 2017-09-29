@@ -1,3 +1,14 @@
+/**********************************************************
+ * 
+ * Author: Ean Milligan
+ * Email: milligan.20@wright.edu || ean.milligan@gmail.com
+ * Course: CS 3100
+ * Prof: Meilin Liu
+ * Date: 9/28/17
+ * Title: Project 1, Qqueue
+ * 
+**********************************************************/
+
 #include "Qqueue.h"
 #include <iostream>
 
@@ -18,26 +29,24 @@ Qqueue::Qqueue(const Qqueue& q) : Capacity(q.size()) {
 
 	for (int i=0;i<num;i++) {
 		try {
-			std::cout<<*(&q.getfront() + i);
 			DynamicQueue[i] = *(&q.getfront() + i);
 		}
-		catch(...) {
+		catch (...) {
 			break;
 		}
 	}
 	for (int i=0;i<num;i++) {
 		try {
-			std::cout<<*(&q.getback() + i);
 			DynamicQueue[num - 1 - i] = *(&q.getback() - i);
 		}
-		catch(...) {
+		catch (...) {
 			break;
 		}
 	}
 };
 
 Qqueue::~Qqueue() {
-	delete DynamicQueue;
+	delete[] DynamicQueue;
 };
 
 void Qqueue::enqueue(const std::string& s) {
@@ -87,7 +96,7 @@ bool Qqueue::IsEmpty() const {
 void Qqueue::print() const {
 
 	for (int i=0;i<num;i++) {
-		std::cout<<DynamicQueue[(front+i)%Capacity];
+		std::cout << DynamicQueue[(front+i)%Capacity];
 
 		if (i != num - 1) {
 			std::cout << ", ";
