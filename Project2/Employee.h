@@ -20,7 +20,7 @@ public:
 	void Employee::setID(int IdNum);
 	int getID();
 	std::string getLastName();
-	std::string getLastName();
+	std::string getFirstName();
 	friend std::ostream& operator<<(std::ostream &outs, Employee &person);
 	friend std::istream& operator>>(std::istream &ins, Employee &person);
 private:
