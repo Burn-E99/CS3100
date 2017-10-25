@@ -1,3 +1,13 @@
+/**********************************************************
+ * 
+ * Author: Ean Milligan
+ * Email: milligan.20@wright.edu || ean.milligan@gmail.com
+ * Course: CS 3100
+ * Prof: Meilin Liu
+ * Date: 10/25/17
+ * Title: Project 2, Singly Linked List
+ * 
+**********************************************************/
 //The Singly Linked List based Stack header file, SSLStack.h, provided by Dr. Meilin Liu, and you can you can modify it if you want. 
 
 #ifndef _SLLStack_
@@ -14,7 +24,7 @@ SLLStack ();
 SLLStack (const SLLStack &s);
 // The copy constructor (performs initialization).
 
-˜SLLStack ();
+~SLLStack ();
 // Perform actions needed when stack goes out of scope.
 
 void push (const Employee &new_item);
