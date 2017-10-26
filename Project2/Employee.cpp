@@ -71,3 +71,6 @@ std::istream& operator>>(std::istream& ins, Employee& e) {
 	e.setLastName(l);
 	return ins;
 };
+
+
+

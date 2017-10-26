@@ -101,7 +101,7 @@ int main() {
 			while (s.size() != 0) {
 				s.pop();
 			}
-			delete &s;
+			//delete &s;
 
 			std::cout << "Bye" << el;
 
@@ -110,45 +110,7 @@ int main() {
 			std::cout << "Invalid Command " << userCommand << ".  Please try again" << el;
 		}
 	}
-
-
-
-
-	/*
-	Employee e = Employee();
-	std::cin >> e;
-	std::cout << e;
-	std::cout << " 1 ";
-	Employee e2 = Employee(e);
-	std::cout << e2;
-	std::cout << " 2 ";
-	e2.setID(69);
-	std::cout << e2 << "\n";
-	std::cout << " 3 ";
-	SLLStack s = SLLStack();
-	s.push(e);
-	std::cout << s.top();
-	std::cout << " 4 ";
-	s.push(e2);
-	std::cout << s.top() << "\n" << s.size() << "\n" << s.is_empty() << "\n";
-	std::cout << " 5 ";
-	s.print();
-	std::cout << " 6 ";
-	std::cout << "\n\n";
-	SLLStack s2 = SLLStack(s);
-	bool x = s==s2;
-	std::cout << "should be true" << x;
-	std::cout << s.size() << "\n";
-	std::cout << s.pop();
-	std::cout << " 7 ";
-	std::cout << s.pop() << " ie ";
-	std::cout << s.size() << s.is_empty() << "\n";
-	std::cout << " 8 ";
-	s.print();
-	std::cout << " 9 ";
-	std::cout << "\nNew:";
-	std::cout << " 10 ";
-	s2.print();
-	bool y = s==s2;
-	std::cout << "should be false" << y;*/
 }
+
+
+

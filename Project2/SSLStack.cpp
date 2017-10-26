@@ -38,12 +38,10 @@ SLLStack::SLLStack (const SLLStack &s) : num(s.size()) {
 		}
 		temp = temp->next;
 	}
-	delete temp;
-	delete copy;
 };
 
 SLLStack::~SLLStack () {
-	delete head;
+	
 };
 
 void SLLStack::push(const Employee &e) {
@@ -95,7 +93,6 @@ void SLLStack::print() const {
 		}
 		copy = copy->next;
 	}
-	delete copy;
 };
 
 bool SLLStack::operator == (const SLLStack &s) {
@@ -111,10 +108,11 @@ bool SLLStack::operator == (const SLLStack &s) {
 			c1.pop();
 			c2 = c2->next;
 		} else {
-			delete c2;
 			return false;
 		}
 	}
-	delete c2;
 	return true;
 };
+
+
+
