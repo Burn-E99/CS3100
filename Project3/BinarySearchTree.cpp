@@ -9,21 +9,7 @@ BinarySearchTree::~BinarySearchTree () {
 };
 
 bool BinarySearchTree::clear() {
-	BinaryTreeNode *c = root;
-	BinaryTreeNode *d;
-	while(root != NULL) {
-		if(c->left != NULL) {
-			c = c->left;
-		} else {
-			if(c->right != NULL) {
-				c = c->right;
-			} else {
-				d = c->parent;
-				delete c;
-				c = d;
-			}
-		}
-	}
+	delpost(root);
 };
 
 bool BinarySearchTree::insert(Employee& emp) {
@@ -145,6 +131,16 @@ bool BinarySearchTree::remove(int k) {
 				return true;
 			} else if(l != NULL && r != NULL) {
 				// literal fucking hell that is on fucking fire and needs to fucking fuck off and burn in a fucking hole
+				BinaryTreeNode *x = r;
+				while(x->left != NULL) {
+					x = x->left;
+				}
+				d = x;
+				c->person = x->person;
+				delete d;
+				if(x->right != NULL) {
+					x->right->parent = x->parent;
+				}
 			}
 
 			return true;
@@ -158,31 +154,67 @@ int BinarySearchTree::BSTsize() {
 };
 
 bool BinarySearchTree::save() {
-	BinaryTreeNode *c = root;
-	int t = 0;
-	std::ofstream out("tree.txt");
-	while(t < size) {
-		t++;
-		if(c->left == NULL) {
-			if(c->right != NULL) {
-				c = c->right;
-			} else {
-				bool a = false;
-				while(!a) {
-					c = c->parent;
-					if(c->right == NULL) {
-						a = false;
-					} else {
-						a = true;
-					}
-				}
-			}
-		} else {
-			c = c->left;
-		}
+	std::ofstream outin("inorder.txt");
+	std::ofstream outpre("preorder.txt");
+	std::ofstream outpost("postorder.txt");
+	
+	in(root, outin);
+	pre(root, outpre);
+	post(root, outpost);
 
-		out << "[" << c->person.getID() << "] " << c->person.getLastName() << ", " << c->person.getFirstName() << "; ";
-	}
-	out.close();
+	outin.close();
+	outpre.close();
+	outpost.close();
 	return true;
+};
+
+void BinarySearchTree::post(struct BinaryTreeNode* node, std::ofstream &s) {
+	if (node == NULL)
+		return;
+
+	// first recur on left subtree
+	post(node->left, s);
+
+	// then recur on right subtree
+	post(node->right, s);
+
+	// now deal with the node
+	s << "[" << node->person.getID() << "] " << node->person.getLastName() << ", " << node->person.getFirstName() << "; ";
+};
+
+void BinarySearchTree::in(struct BinaryTreeNode* node, std::ofstream &s) {
+	if (node == NULL)
+		return;
+
+	/* first recur on left child */
+	in(node->left, s);
+
+	/* then print the data of node */
+	s << "[" << node->person.getID() << "] " << node->person.getLastName() << ", " << node->person.getFirstName() << "; ";  
+
+	/* now recur on right child */
+	in(node->right, s);
+};
+
+void BinarySearchTree::pre(struct BinaryTreeNode* node, std::ofstream &s) {
+	if (node == NULL)
+		return;
+
+	/* first print data of node */
+	s << "[" << node->person.getID() << "] " << node->person.getLastName() << ", " << node->person.getFirstName() << "; ";  
+
+	/* then recur on left sutree */
+	pre(node->left, s);  
+
+	/* now recur on right subtree */
+	pre(node->right, s);
+};
+
+void BinarySearchTree::delpost(BinaryTreeNode* n) {
+	if(n!=NULL) {
+		delpost(n->left);
+		delpost(n->right);
+		delete n;
+		n = NULL;
+	}
 };

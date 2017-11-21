@@ -22,6 +22,10 @@ class BinarySearchTree {
 	private:
 		BinaryTreeNode * root;
 		int size;
+		void in(BinaryTreeNode* n, std::ofstream& s);
+		void pre(BinaryTreeNode* n, std::ofstream& s);
+		void post(BinaryTreeNode* n, std::ofstream& s);
+		void delpost(BinaryTreeNode* n);
 };
 
 

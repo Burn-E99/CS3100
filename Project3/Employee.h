@@ -20,7 +20,7 @@ public:
 	int getID() const;
 	std::string getFirstName() const;
 	std::string getLastName() const;
-	friend std::ostream& operator<<(std::ostream &outs, Employee &person);
+	friend std::ostream& operator<<(std::ostream &outs, const Employee &person);
 	friend std::istream& operator>>(std::istream &ins, Employee &person);
 
 	bool operator>(const Employee &person);
