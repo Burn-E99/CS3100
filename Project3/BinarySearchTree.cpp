@@ -1,3 +1,14 @@
+/**********************************************************
+ * 
+ * Author: Ean Milligan
+ * Email: milligan.20@wright.edu || ean.milligan@gmail.com
+ * Course: CS 3100
+ * Prof: Meilin Liu
+ * Date: 11/20/17
+ * Title: Project 3, Binary Search Tree
+ * 
+**********************************************************/
+
 #include "BinarySearchTree.h"
 #include <iostream>
 #include <fstream>
@@ -62,7 +73,10 @@ Employee& BinarySearchTree::search(int k) {
 				} else {
 					bool a = false;
 					while(!a) {
-						c = c->parent;
+						try {
+							c = c->parent;
+						}
+						catch (exception){}
 						if(c->right == NULL) {
 							a = false;
 						} else {
@@ -104,6 +118,7 @@ bool BinarySearchTree::remove(int k) {
 				c = c->left;
 			}
 		} else {
+			size--;
 			// delete
 			d = c;
 			BinaryTreeNode *p = c->parent;
@@ -111,10 +126,10 @@ bool BinarySearchTree::remove(int k) {
 			BinaryTreeNode *r = c->right;
 
 			if(l == NULL && r == NULL) {
-				delete d;
+				d = NULL;
 				return true;
 			} else if(l == NULL && r != NULL) {
-				delete d;
+				d = NULL;
 				if(p->person > r->person) {
 					p->right = r;
 				} else {
@@ -122,7 +137,7 @@ bool BinarySearchTree::remove(int k) {
 				}
 				return true;
 			} else if(l != NULL && r == NULL) {
-				delete d;
+				d = NULL;
 				if(p->person > l->person) {
 					p->right = l;
 				} else {
@@ -137,7 +152,8 @@ bool BinarySearchTree::remove(int k) {
 				}
 				d = x;
 				c->person = x->person;
-				delete d;
+				//delete d;
+				d = NULL;
 				if(x->right != NULL) {
 					x->right->parent = x->parent;
 				}
@@ -214,7 +230,33 @@ void BinarySearchTree::delpost(BinaryTreeNode* n) {
 	if(n!=NULL) {
 		delpost(n->left);
 		delpost(n->right);
-		delete n;
 		n = NULL;
 	}
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,14 @@
+/**********************************************************
+ * 
+ * Author: Ean Milligan
+ * Email: milligan.20@wright.edu || ean.milligan@gmail.com
+ * Course: CS 3100
+ * Prof: Meilin Liu
+ * Date: 11/20/17
+ * Title: Project 3, Binary Search Tree
+ * 
+**********************************************************/
+
 #include "BinarySearchTree.h"
 #include <iostream>
 #include <fstream>
@@ -10,7 +21,7 @@ int main() {
 	std::string userCommand;
 	BinarySearchTree s = BinarySearchTree();
 
-	std::cout << "CS3100 Project 2: SLLStack" << el;
+	std::cout << "CS3100 Project 3: BinarySearchTree" << el;
 
 	while(true) {
 		std::cout << el << el << "----------------------------------------------------------------------" << el;
@@ -86,4 +97,24 @@ int main() {
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

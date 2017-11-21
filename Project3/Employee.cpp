@@ -4,8 +4,8 @@
  * Email: milligan.20@wright.edu || ean.milligan@gmail.com
  * Course: CS 3100
  * Prof: Meilin Liu
- * Date: 10/25/17
- * Title: Project 2, Singly Linked List
+ * Date: 11/20/17
+ * Title: Project 3, Binary Search Tree
  * 
 **********************************************************/
 
@@ -90,5 +90,17 @@ bool Employee::operator == (const Employee &person) {
 bool Employee::operator != (const Employee &person) {
 	return (ID != person.getID());
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 

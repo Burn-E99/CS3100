@@ -1,3 +1,13 @@
+/**********************************************************
+ * 
+ * Author: Ean Milligan
+ * Email: milligan.20@wright.edu || ean.milligan@gmail.com
+ * Course: CS 3100
+ * Prof: Meilin Liu
+ * Date: 11/20/17
+ * Title: Project 3, Binary Search Tree
+ * 
+**********************************************************/
 //Employee.h provided by Dr. Meilin Liu, and you can modify it if //you want.
 
 #ifndef _BinarySearchTree_
@@ -31,3 +41,20 @@ class BinarySearchTree {
 
 #endif
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
