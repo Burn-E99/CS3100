@@ -13,7 +13,7 @@ int main() {
 
 	cin >> x >> y >> c >> b;
 
-	cout << x << y << c << b;
+	cout << x << " " << y << " " << c << " " << b;
 
 	return 0;
 }
